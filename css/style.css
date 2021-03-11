@@ -104,9 +104,17 @@ a:hover {
 .logo {
   height: 30px;
   width: auto;
+  display: inline;
+}
+@media (max-width: 768px) {
+  .logo {
+    margin-left: auto;
+    display: block;
+  }
 }
 nav {
   width: 100%;
+  display: flex;
 }
 nav ul {
   margin: 0;
@@ -120,10 +128,7 @@ nav ul {
     display: none;
   }
 }
-@media (max-width: 768px) {
-  .menu-wrap {
-  }
-}
+
 nav li {
   display: inline-block;
   margin: 0 35px;
@@ -148,11 +153,16 @@ nav a:hover::before {
 .menu-wrap {
   position: fixed;
   top: 0;
-  left: 95%;
+  /* margin-left: auto; */
   z-index: 1;
-  display: flex;
+  display: none;
   margin-top: 1.5rem;
   padding: 1rem;
+}
+@media (max-width: 768px) {
+  .menu-wrap {
+    display: flex;
+  }
 }
 .menu-wrap .toggler {
   position: absolute;
